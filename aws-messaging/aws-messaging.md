@@ -21,7 +21,7 @@ General information:  https://docs.aws.amazon.com/sns/latest/dg/welcome.html
 
 Virtual destinations in ActiveMQ are used to decouple producer and consumer(s) even more than regular publish-subscribe pattern.
 One of use cases we have right now: 
-Email notifications system need to notify client systems about email sending status. Email notifications send message to the topic, which has virtual queues attached to one per client application, each queue is consumed by single application. This way Notifications system (producer) does not know how many client applications (consumers) are really subscribed and listening. But each one guaranteed to get a copy of the message.
+System provides REST service whic does some asynchonous processing and need to notify client systems about completion status. Service application sends message to the topic, which has virtual queues attached to it (one per client application), each queue is consumed by single client application. This way producer does not know how many client applications (consumers) are really subscribed and listening. But each one guaranteed to get a copy of the message.
 
 image 3
 
