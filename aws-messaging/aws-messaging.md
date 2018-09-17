@@ -25,7 +25,7 @@ One of use cases we have right now:
 System provides REST service whic does some asynchonous processing and need to notify client systems about completion status. Service application sends message to the topic, which has virtual queues attached to it (one per client application), each queue is consumed by single client application. This way producer does not know how many client applications (consumers) are really subscribed and listening, but each consumer guaranteed to get a copy of the message.
 
 
-image 3
+![SNS Messages Consumption via SQS](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img30.png)
 
 #### Links:
 - ActiveMQ virtual destinations: http://activemq.apache.org/virtual-destinations.html
