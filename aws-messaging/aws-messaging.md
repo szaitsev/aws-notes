@@ -6,16 +6,13 @@
 
 “Amazon Simple Notification Service (Amazon SNS) is a web service that coordinates and manages the delivery or sending of messages to subscribing endpoints or clients.” 
 
-![SNS Overview] (/images/img10.png)
-
-![SNS Overview][sns_overview]
-[sns_overview]: ./images/img10.png  "SNS Overview"
+![SNS Overview](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img10.png)
 
 Conceptually, It sounds exactly like standard ActiveMQ topic, but in reality it does not. SNS is working with predefined type of consumers. 
 SNS has ability to call HTTP(s) endpoints, so it could be possible to make it deliver messages to the REST-like service. However, it does not allow to use “internal” addresses, basically SNS is not aware of you VPC and routing inside VPC, so you should make your HTTP(S) endpoint publicly available from the internet, which definitely is not working for many cases.
 So, the only possible solution to implement consumption of SNS messages is via SQS subscriber. So, the integration will look like this:
 
-image2
+![SNS Messages Consumption via SQS](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img20.png)
 
 #### Links:
 General information:  https://docs.aws.amazon.com/sns/latest/dg/welcome.html
