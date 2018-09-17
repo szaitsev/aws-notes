@@ -15,18 +15,22 @@ So, the only possible solution to implement consumption of SNS messages is via S
 ![SNS Messages Consumption via SQS](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img20.png)
 
 #### Links:
-General information:  https://docs.aws.amazon.com/sns/latest/dg/welcome.html
+- General information:  https://docs.aws.amazon.com/sns/latest/dg/welcome.html
+- Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-subscribe-queue-sns-topic.html
 
 ## 2. ActiveMQ Virtual Topic Implementation in AWS.
 
 Virtual destinations in ActiveMQ are used to decouple producer and consumer(s) even more than regular publish-subscribe pattern.
 One of use cases we have right now: 
-System provides REST service whic does some asynchonous processing and need to notify client systems about completion status. Service application sends message to the topic, which has virtual queues attached to it (one per client application), each queue is consumed by single client application. This way producer does not know how many client applications (consumers) are really subscribed and listening. But each one guaranteed to get a copy of the message.
+System provides REST service whic does some asynchonous processing and need to notify client systems about completion status. Service application sends message to the topic, which has virtual queues attached to it (one per client application), each queue is consumed by single client application. This way producer does not know how many client applications (consumers) are really subscribed and listening, but each consumer guaranteed to get a copy of the message.
+
 
 image 3
 
 #### Links:
-ActiveMQ virtual destinations: http://activemq.apache.org/virtual-destinations.html
+- ActiveMQ virtual destinations: http://activemq.apache.org/virtual-destinations.html
+- Tutorial: Creating an Amazon SQS Queue https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-create-queue.html
+  
 
 
 
