@@ -18,7 +18,7 @@ So, the only possible solution to implement consumption of SNS messages is via S
 - General information:  https://docs.aws.amazon.com/sns/latest/dg/welcome.html
 - Tutorial: Subscribing an Amazon SQS Queue to an Amazon SNS Topic https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-subscribe-queue-sns-topic.html
 
-## 2. ActiveMQ Virtual Topic Implementation in AWS.
+## 2. ActiveMQ Virtual Topic Implementation in AWS
 
 Virtual destinations in ActiveMQ are used to decouple producer and consumer(s) even more than regular publish-subscribe pattern.
 One of use cases we have right now: 
