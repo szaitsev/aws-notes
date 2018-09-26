@@ -24,13 +24,25 @@ Virtual destinations in ActiveMQ are used to decouple producer and consumer(s) e
 One of use cases we have right now: 
 System provides REST service whic does some asynchonous processing and need to notify client systems about completion status. Service application sends message to the topic, which has virtual queues attached to it (one per client application), each queue is consumed by single client application. This way producer does not know how many client applications (consumers) are really subscribed and listening, but each consumer guaranteed to get a copy of the message.
 
+Implementation of this pattern in SNS/SQS is just extension of the previous scenario. We just need to subscribe multiple SQS queues (one per application) to the sinle SNS.
 
-![SNS Messages Consumption via SQS](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img30.png)
+![SNS Messages Consumption via multiple SQS'](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img30.png)
 
 #### Links:
 - ActiveMQ virtual destinations: http://activemq.apache.org/virtual-destinations.html
 - Tutorial: Creating an Amazon SQS Queue https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-create-queue.html
   
+## 3. Standard SQS vs FIFO
+TODO
+
+## 4. SQS Messages Retention Time
+TODO
+
+## 5. SNS Message Filtering
+TODO
+
+## 6. SQS Long Polling 
+TODO
 
 
 
