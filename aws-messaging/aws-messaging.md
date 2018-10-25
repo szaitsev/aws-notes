@@ -55,12 +55,22 @@ To avoid these issues SQS FIFO queue can be used, however there are couple addit
 
 ## 4. SQS Messages Retention Time
 
-TODO
+Default retention time for message in SQS is 4 days. It can be increased up to 14 days. So, anyone using SQS should be careful and may want to increase default retention time in order to not loose messages.
 
 ## 5. SQS Long Polling
 
-TODO
+Long poling is the mechanism which allows you to reduce number of empty responses from the queue. Each application should utilize long polling in order to preserve system resources and reduce the cost of usage SQS service.
+
+**Links:**
+
+- Long Polling Tutorial: <https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-long-polling-for-queue.html>
 
 ## 6. SNS Message Filtering
 
-TODO
+SNS allows to define a filter for each subscriber based on the message attributes. It allows to offload systems from the messages they do not really interested in.
+
+![SNS Message Filtering](https://github.com/szaitsev/aws-notes/blob/master/aws-messaging/images/img40.png)
+
+**Links:**
+
+- Filtering Messaging with SNS: <https://docs.aws.amazon.com/sns/latest/dg/message-filtering.html>
