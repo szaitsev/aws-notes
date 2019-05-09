@@ -74,3 +74,15 @@ SNS allows to define a filter for each subscriber based on the message attribute
 **Links:**
 
 - Filtering Messaging with SNS: <https://docs.aws.amazon.com/sns/latest/dg/message-filtering.html>
+
+## 7. DLQ
+Dead-letter queue can be used for SQS messages which have not been consumed succesfully. If consumer of source SQS fails to process message certain number of times, message moves to DLQ. It allows to isolate problem messages and handle their failures. Also, in system with many messages keeping of failed messages till retention period might be cost inefficient. Instead better to move them into DLQ after number of attempts. In FIFO message group is blocked until message is processed successfully. 
+
+* DLQ is not created automatically with SQS. 
+* DLQ for standard queue must be standard, the same true for FIFO. 
+* message id remains the same for message moved to DLQ
+* timestamp is not changed for message moved to DLQ. Best practice to set retention period for DLQ longer than for source queue. Otherwise message will be removed from DLQ earlier than retention period.
+
+Don't use DLQ:
+* with standard queue if needed to keep message transmission indefinitely  
+* with FIFO if exact order of messages is required
